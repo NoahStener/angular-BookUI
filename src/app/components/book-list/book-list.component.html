@@ -1,0 +1,29 @@
+<div class="lib-container">
+    <h2>Books in Library</h2>
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Release Year</th>
+          <th>Available</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.yearOfRelease}}</td>
+          <td>{{book.isAvaliable ? 'yes' : 'no'}}</td>
+          <td>
+            <button (click)="deleteBook(book.bookID)" class="btn btn-danger">Delete</button>
+            <a [routerLink]="['/edit', book.bookID]" class="btn btn-primary">Edit</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a [routerLink]="['/create']" class="btn btn-success">Add New Book</a>
+</div>
+
+
