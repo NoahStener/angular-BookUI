@@ -33,7 +33,7 @@ export class BookService {
   }
 
   updateBook(book: UpdateBookDTO): Observable<ApiResponse<BookDTO>>{
-    return this.http.put<ApiResponse<BookDTO>>(`${this.bookUrl}/${book.bookID}`, book);
+    return this.http.put<ApiResponse<BookDTO>>(`${this.bookUrl}`, book);
   }
 
   deleteBook(id: number): Observable<ApiResponse<any>>{

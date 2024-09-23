@@ -1,1 +1,52 @@
-<p>book-create works!</p>
+<div class="book-create-container">
+    <h2>Add a New Book</h2>
+    <form [formGroup]="createBookForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input id="title" formControlName="title" type="text" class="form-control" />
+            <div *ngIf="createBookForm.get('title') && createBookForm.get('title')" class="error">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author</label>
+            <input id="author" formControlName="author" type="text" class="form-control" />
+            <div *ngIf="createBookForm.get('author') && createBookForm.get('author')" class="error">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="yearOfRelease">Year of Release</label>
+            <input id="yearOfRelease" formControlName="yearOfRelease" type="number" class="form-control" />
+            <div *ngIf="createBookForm.get('yearOfRelease') && createBookForm.get('yearOfRelease')" class="error">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <input id="genre" formControlName="genre" type="text" class="form-control" />
+            <div *ngIf="createBookForm.get('genre') && createBookForm.get('genre')" class="error">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" formControlName="description" class="form-control"></textarea>
+            <div *ngIf="createBookForm.get('description') && createBookForm.get('description')" class="error">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="isAvaliable">Available</label>
+            <input id="isAvaliable" formControlName="isAvaliable" type="checkbox" class="form-check-input" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="createBookForm.invalid">Add Book</button>
+    </form>
+</div>
+    
+
+
+
+
+

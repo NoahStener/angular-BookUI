@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BookService } from '../../services/book.service';
 import { BookDTO } from '../../interfaces/book.dto';
 import { RouterModule } from '@angular/router';
-import { response } from 'express';
 
 @Component({
   selector: 'app-book-list',

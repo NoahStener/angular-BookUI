@@ -19,6 +19,7 @@
           <td>
             <button (click)="deleteBook(book.bookID)" class="btn btn-danger">Delete</button>
             <a [routerLink]="['/edit', book.bookID]" class="btn btn-primary">Edit</a>
+            <a [routerLink]="['/book', book.bookID]" class="btn btn-info">Details</a>
           </td>
         </tr>
       </tbody>

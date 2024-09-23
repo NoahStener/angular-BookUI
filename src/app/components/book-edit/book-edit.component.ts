@@ -47,6 +47,9 @@ export class BookEditComponent implements OnInit{
   }
 
   onSubmit(): void {
+    //Kontrollera form
+    console.log('Form Submitted', this.editBookForm.value);
+
     if(this.editBookForm.valid){
       const updatedBook: UpdateBookDTO = {bookID: this.bookID, ...this.editBookForm.value};
       this.bookService.updateBook(updatedBook).subscribe(() => {
