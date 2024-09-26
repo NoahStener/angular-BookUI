@@ -1,48 +1,39 @@
 <div class="book-create-container">
     <h2>Add a New Book</h2>
     <form [formGroup]="createBookForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" formControlName="title" type="text" class="form-control" />
-            <div *ngIf="createBookForm.get('title') && createBookForm.get('title')" class="error">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="author">Author</label>
-            <input id="author" formControlName="author" type="text" class="form-control" />
-            <div *ngIf="createBookForm.get('author') && createBookForm.get('author')" class="error">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="yearOfRelease">Year of Release</label>
-            <input id="yearOfRelease" formControlName="yearOfRelease" type="number" class="form-control" />
-            <div *ngIf="createBookForm.get('yearOfRelease') && createBookForm.get('yearOfRelease')" class="error">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="genre">Genre</label>
-            <input id="genre" formControlName="genre" type="text" class="form-control" />
-            <div *ngIf="createBookForm.get('genre') && createBookForm.get('genre')" class="error">
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" formControlName="description" class="form-control"></textarea>
-            <div *ngIf="createBookForm.get('description') && createBookForm.get('description')" class="error">
-            </div>
-        </div>
-
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="form-control" formControlName="title"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" id="author" class="form-control" formControlName="author"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="yearOfRelease">Release Year</label>
+        <input type="number" id="yearOfRelease" class="form-control" formControlName="yearOfRelease"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="genre">Genre</label>
+        <input type="text" id="genre" class="form-control" formControlName="genre"/>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control" formControlName="description"/>
+      </div>
+  
         <div class="form-group">
             <label for="isAvaliable">Available</label>
-            <input id="isAvaliable" formControlName="isAvaliable" type="checkbox" class="form-check-input" />
+            <input type="checkbox" id="isAvaliable" formControlName="isAvaliable"/>
         </div>
-
-        <button type="submit" class="btn btn-primary" [disabled]="createBookForm.invalid">Add Book</button>
-    </form>
+    
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a [routerLink]="['/books']" class="btn btn-secondary">Cancel</a>
+    </form> 
 </div>
     
 

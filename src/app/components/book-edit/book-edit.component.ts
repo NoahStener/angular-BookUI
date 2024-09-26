@@ -4,11 +4,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { BookService } from '../../services/book.service';
 import { UpdateBookDTO } from '../../interfaces/book.dto';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book-edit',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [ReactiveFormsModule, RouterModule, CommonModule],
   templateUrl: './book-edit.component.html',
   styleUrls: ['./book-edit.component.css']
 })
@@ -16,7 +17,12 @@ export class BookEditComponent implements OnInit{
   editBookForm: FormGroup;
   bookID: number;
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder, private bookService: BookService, private router: Router){
+  constructor(
+    private route: ActivatedRoute,
+    private fb: FormBuilder, 
+    private bookService: BookService, 
+    private router: Router
+  ){
     this.bookID = this.route.snapshot.params['id'];
 
     //definera formbuilder group för bokens egenskaper
@@ -58,5 +64,4 @@ export class BookEditComponent implements OnInit{
     }
   }
 
-  
 }
