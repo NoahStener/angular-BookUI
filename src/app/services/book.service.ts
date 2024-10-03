@@ -38,5 +38,9 @@ export class BookService {
 
   deleteBook(id: number): Observable<ApiResponse<any>>{
     return this.http.delete<ApiResponse<any>>(`${this.bookUrl}/${id}`);
-  } 
+  }
+  
+  serachBooks(searchTerm: string): Observable<ApiResponse<BookDTO[]>>{
+    return this.http.get<ApiResponse<BookDTO[]>>(`${this.bookUrl}/search/${searchTerm}`);
+  }
 }

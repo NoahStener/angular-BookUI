@@ -1,12 +1,28 @@
-<p>book-details works!</p>
-<div *ngIf="book">
+<div class="book-details-container" *ngIf="book">
     <h2>{{book.title}} Details</h2>
-    <p><strong>BookID: </strong>{{book.bookID}}</p>
-    <p><strong>Author: </strong>{{book.author}}</p>
-    <p><strong>Release Year: </strong>{{book.yearOfRelease}}</p>
-    <p><strong>Genre: </strong>{{book.genre}}</p>
-    <p><strong>Description: </strong>{{book.description}}</p>
-    <p><strong>Available: </strong>{{book.isAvaliable}}</p>
-
-    <a [routerLink]="['/books']" class="btn btn-secondary">Back to List</a>
+    <div class="form-group">
+        <label for="bookID">BookID:</label>
+        <p id="bookID">{{book.bookID}}</p>
+    </div>
+    <div class="form-group">
+        <label for="author">Author:</label>
+        <p id="author">{{book.author}}</p>
+    </div>
+    <div class="form-group">
+        <label for="yearOfRelease">Release Year:</label>
+        <p id="yearOfRelease">{{book.yearOfRelease}}</p>
+    </div>
+    <div class="form-group">
+        <label for="genre">Genre:</label>
+        <p id="genre">{{book.genre}}</p>
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <p id="description">{{book.description}}</p>
+    </div>
+    <div class="form-group">
+        <label for="isAvaliable">Available:</label>
+        <p id="isAvaliable">{{book.isAvaliable}}</p>
+    </div>
+    <a [routerLink]="['/books']" class="btn btn-secondary">Return to Main Page</a>
 </div>

@@ -3,16 +3,18 @@ import { CommonModule } from '@angular/common';
 import { BookService } from '../../services/book.service';
 import { BookDTO } from '../../interfaces/book.dto';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-book-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ReactiveFormsModule],
   templateUrl: './book-list.component.html',
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
   books:BookDTO[] = [];
+  searchText: string = '';
 
   constructor(private bookService: BookService){}
 
@@ -31,7 +33,6 @@ export class BookListComponent implements OnInit {
       }
     });
   }
-
   deleteBook(id: number) {
     this.bookService.deleteBook(id).subscribe(response => {
       if(response.isSuccess){
@@ -42,5 +43,6 @@ export class BookListComponent implements OnInit {
       }
     });
   }  
+ 
 
 }
